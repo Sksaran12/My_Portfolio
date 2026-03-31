@@ -6,6 +6,24 @@ var typed = new Typed(".multiple-text",{
     loop: true
 })  
 
+// Hamburger Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+  menuToggle.classList.toggle('active');
+});
+
+// Close menu when a nav link is clicked
+navbar.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navbar.classList.remove('open');
+    menuToggle.classList.remove('active');
+  });
+});
+
+
 const btn = document.querySelector(".btn");
 
 btn.addEventListener("click", () => {
@@ -14,6 +32,7 @@ btn.addEventListener("click", () => {
         btn.innerText = "Download CV";
     }, 2000);
 });
+
 
 // document.getElementById("facebook").addEventListener("click", () => {
 //     window.open("https://www.facebook.com/Mandal.saran.2020/", );
@@ -54,4 +73,5 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
 
